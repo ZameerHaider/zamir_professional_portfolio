@@ -1,0 +1,10 @@
+1. **Architecture:** Strictly follow Clean Architecture (Data, Domain, Presentation). No domain logic in the UI.
+2. **State Management:** Use Riverpod with Code Generation (`@riverpod`). Manual providers are forbidden.
+3. **Immutability:** All Entities and Data Models must be immutable using `@freezed`.
+4. **Style:** Create a unified "Dark/Tech" Design System using Material 3. Primary: #0F172A, Accent: #22D3EE.
+5. **Spec-Driven:** All static content (Project names, descriptions, roles) must be driven by `assets/specs/portfolio_config.json`.
+6. **Tooling Constraints:** Since the `flutter` command may not be exposed globally in the non-interactive shell environment, always use the absolute SDK path (`~/Documents/dev/flutter/bin/flutter`) when executing terminal commands.
+7. **Dependency Resolution:** When adding new dependencies (e.g., riverpod, freezed), do not forcefully pin newly fetched latest versions using strict bounds if they cause dependency resolution errors with internal constraints (e.g., conflicts with `flutter_test` or macros). If conflicts arise, use empty constraints in `pubspec.yaml` to allow `dart pub get` to resolve to the highest natively compatible stable versions safely.
+8. **Architectural Continuity:** The Agent must prioritize the existing Clean Architecture pattern found in `lib/`.
+9. **State Management Enforcement:** All new state management must strictly use `@riverpod` generators.
+10. **Context Syncing:** Reference `IMPLEMENTATION_PLAN.md` before every task to maintain context and ensure synchronized development states.
