@@ -1,0 +1,136 @@
+{
+  "projects": [
+    {
+      "id": "one_biz",
+      "title": "One Biz",
+      "role": "Senior Flutter Developer",
+      "description": "Designed and developed a multi-vendor solution enabling merchants to manage sales, bookings, and products unified. Integrated Firebase, Tabby, Tamara, Nearpay, geolocations, and PDF generation.",
+      "techStack": ["Flutter", "Dart", "Firebase", "GetX", "Hive", "REST"],
+      "impactMetrics": ["Secure Social Logins", "Payment Gateways", "Offline Storage"],
+      "liveLink": ""
+    },
+    {
+      "id": "one_app",
+      "title": "ONE App",
+      "role": "Senior Flutter Developer",
+      "description": "All-in-One Lifestyle Solution connecting users with local businesses via shopping, food delivery, service appointments, and ticketing.",
+      "techStack": ["Flutter", "Firebase", "GetX", "iOS/Android"],
+      "impactMetrics": ["Multi-payment connectivity", "Real-time notifications"],
+      "liveLink": ""
+    },
+    {
+      "id": "ignite_biz",
+      "title": "Ignite (اجنايت)",
+      "role": "Flutter Developer",
+      "description": "Cross-platform business management solution for operations and customer connections. Architected cleanly using the MVVM pattern.",
+      "techStack": ["Flutter", "Provider", "Firebase", "SurePay", "NearPay"],
+      "impactMetrics": ["One Signal Push", "Secure REST APIs"],
+      "liveLink": ""
+    },
+    {
+      "id": "doyen",
+      "title": "Doyen Audio Streaming",
+      "role": "Flutter Developer",
+      "description": "A cross-platform audio streaming app similar to Clubhouse supporting live audio communication seamlessly via Agora.",
+      "techStack": ["Flutter", "Agora SDK", "Firebase", "Provider"],
+      "impactMetrics": ["Scaling Real-time voice streams"],
+      "liveLink": ""
+    },
+    {
+      "id": "grapevine_go",
+      "title": "GrapevineGO",
+      "role": "Flutter Developer",
+      "description": "A customized treasure hunt app where users locate hidden locations, answer questions, and compete against other teams natively.",
+      "techStack": ["Flutter", "Location Services"],
+      "impactMetrics": ["Interactive UI/UX", "Geolocaton logic"],
+      "liveLink": ""
+    },
+    {
+      "id": "grapevine_quest",
+      "title": "grapevineQUST",
+      "role": "Flutter Developer",
+      "description": "A smartphone-based photo scavenger hunt app where participants engage in location-based mobile photography challenges.",
+      "techStack": ["Flutter", "Hardware APIs"],
+      "impactMetrics": ["Mobile Photography workflow optimized"],
+      "liveLink": "https://grapevineQUEST.com"
+    },
+    {
+      "id": "eds_app",
+      "title": "EDS Employee System",
+      "role": "Flutter Developer",
+      "description": "Employee management system built with Flutter for managing staff data, attendance, payroll, and core HR operations.",
+      "techStack": ["Flutter"],
+      "impactMetrics": ["Enterprise HR efficiency scaled"],
+      "liveLink": ""
+    },
+    {
+      "id": "fsc_room_scanner",
+      "title": "FSC Room Scanner",
+      "role": "Flutter Developer",
+      "description": "A rigorous Flutter-based cleaning record management system designed for hotel staff to track workflow operations.",
+      "techStack": ["Flutter"],
+      "impactMetrics": ["Robust Staff tracking architecture"],
+      "liveLink": ""
+    },
+    {
+      "id": "cyber_private",
+      "title": "Cyber Private",
+      "role": "Flutter Developer",
+      "description": "An online portal app designed for cyber-security awareness allowing users to check breached credentials safely.",
+      "techStack": ["Flutter", "Encryption/Auth"],
+      "impactMetrics": ["Breach detection logic", "Secure APIs"],
+      "liveLink": ""
+    },
+    {
+      "id": "pms",
+      "title": "PMS Tracking",
+      "role": "Flutter Developer",
+      "description": "Project management system designed specifically for bug and issue tracking guaranteeing deep collaborative task efficiency.",
+      "techStack": ["Flutter"],
+      "impactMetrics": ["Fluid teamwork collaboration interface"],
+      "liveLink": ""
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp_1",
+      "company": "Ignite",
+      "position": "Senior Flutter Developer",
+      "period": "May 2024 – Present",
+      "accomplishments": [
+        "Architecting complex multi-vendor solutions handling scalable global states mapping through GetX and REST.",
+        "Integrated robust payment gateways (Tabby, Tamara, Nearpay) alongside offline cache environments via Hive."
+      ]
+    },
+    {
+      "id": "exp_2",
+      "company": "Ignite",
+      "position": "Flutter Developer",
+      "period": "Aug 2021 – May 2024",
+      "accomplishments": [
+        "Developed cross-platform MVVM solutions for business operation and management flows.",
+        "Configured One Signal push notifications intersecting natively with Provider-based UI rendering pipelines."
+      ]
+    },
+    {
+      "id": "exp_3",
+      "company": "The Xpertz",
+      "position": "Flutter Developer",
+      "period": "Aug 2020 – Aug 2021",
+      "accomplishments": [
+        "Built Doyen, an interactive realtime audio streaming platform bridging the Agora SDK for ultra-low latency.",
+        "Engineered smooth cross-platform social authentication and responsive state loops safely using Provider."
+      ]
+    },
+    {
+      "id": "exp_4",
+      "company": "The Xpertz",
+      "position": "Intern/Junior Flutter Developer",
+      "period": "May 2020 – July 2020",
+      "accomplishments": [
+        "Specialized in transforming deep PSD/Figma designs into highly fluid pixel-perfect mobile layouts.",
+        "Assimilated standard Dart guidelines focusing rigorously cleanly on responsive UIs and structural formatting."
+      ]
+    }
+  ]
+}

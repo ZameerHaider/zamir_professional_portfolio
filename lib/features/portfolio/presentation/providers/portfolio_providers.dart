@@ -12,7 +12,7 @@ DataService dataService(DataServiceRef ref) {
   return DataService(
     firestoreRepo: FirestorePortfolioRepository(),
     jsonRepo: JsonPortfolioRepository(),
-    useFirestore: false, // FIREBASE MOCK CONFIG: Toggled to false to avoid credential blocking
+    useFirestore: true, // Now fetching from live Firebase streams natively
   );
 }
 
