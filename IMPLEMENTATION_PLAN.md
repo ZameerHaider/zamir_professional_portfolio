@@ -1,34 +1,52 @@
 # Zamir Professional Portfolio - Master Implementation Plan
 
 ## Phase Alignment Status
-- [x] Phase 1: Environment Setup & Senior Guardrails (VERIFIED)
-- [x] Phase 2: Domain Modeling (VERIFIED)
-- [x] Phase 3: Data Layer & Firebase Mocking (VERIFIED)
-- [x] Phase 4: Presentation Layer (VERIFIED)
-- [ ] Phase 5: Web Optimization & Final Polish (PENDING)
+- [x] Phase 1: Environment Setup & Senior Guardrails
+- [x] Phase 2: Domain Modeling
+- [x] Phase 3: Data Layer & Firebase Integration
+- [x] Phase 4: Modern Branding & The "Beautiful" Splash
+- [x] Phase 5: Interactive Dashboard & Navigation Sync (VERIFIED)
+- [x] Phase 6: Resume Module & Social Integration (VERIFIED)
+- [/] Phase 7: Responsiveness Verification & Optimization (IN PROGRESS)
 
-## Current Architectural State
+## Phase 5: Interactive Dashboard & Navigation Sync
+...
+## Phase 6: Resume Module & Social Integration
 
-### 1. Guardrails & Architecture
-- Strict Clean Architecture standard is enforced natively inside `lib/core`, `lib/features/portfolio/[domain|data|presentation]`.
-- Immutability mapping is achieved using `freezed` mappings over active endpoints.
-- `.antigravity/rules` maintains constraints on state-management, tooling, strict separation of concerns, and codebase sync loops.
+### Stage 1: Global Navigation Updates
+- [ ] **Social Icons**: GitHub and LinkedIn integration in Top Nav.
+- [ ] **Action Buttons**: "Download CV" button with direct PDF link.
+- [ ] **Url Launcher**: Browser-tab redirection for external links.
 
-### 2. Domain Layer (Verified)
-- **Entities:** 
-  - `Project` (id, title, role, description, techStack, impactMetrics, liveLink).
-  - `Experience` (id, company, position, period, accomplishments).
-  - `Skill` (id, category, proficiency).
-- **Core Interface:** `IPortfolioRepository` abstracts core methods like `streamProjects()` and `streamExperience()`.
+### Stage 2: Resume Viewer Module
+- [ ] **PDF Rendering**: Integration of `pdfrx` for skeuomorphic viewer.
+- [ ] **Interactive Viewer**: Zoom, scroll, and responsive modal transitions.
+- [ ] **Resume Dashboard Section**: New dedicated section for document viewing.
 
-### 3. Data Layer (Verified)
-- **FirestorePortfolioRepository:** Mapped exactly to interpret `Cloud Firestore` document streams over defined collections natively yielding explicit Document snapshot conversion blocks.
-- **JsonPortfolioRepository:** Constructed to fetch local mock configurations (`assets/specs/portfolio_config.json`) with internal `.handleError(..)` fallbacks to prevent pipeline breaks.
-- **DataService:** Configured as an overriding pipeline injection service bridging both JSON/Mock definitions alongside Native Firebase streams safely toggling natively over an explicit `useFirestore: false` configuration to allow unblocked Web deployment.
+### Stage 3: Clean Architecture Sync
+- [ ] **Domain Entity**: `ResumeEntity` for versioning.
+- [ ] **Riverpod Provider**: `ResumeProvider` for async PDF loading state.
+- [ ] **Mobile Optimization**: Full-screen modal viewer for smaller viewports.
 
-### 4. State Management Layer (Verified)
-- **Portfolio Providers:** Generated `@riverpod` references (`dataService`, `projects`, `experience`) managing standard asynchronous state mappings down to presentation tiers seamlessly.
-- **Theme Provider:** Established basic architecture bridging dynamic theme switching structurally locking onto a unified custom "Dark/Tech" initial state natively.
+## Phase 7: Responsiveness Verification & Optimization
 
-## Upcoming Plan (Phase 3 Prep)
-The Domain and Data environments are completely uncoupled from uninitialized credentials using robust Riverpod integration layers. Local JSON fall-downs ensure presentation bindings won't crash asynchronously, establishing the foundation to securely model the visual pipeline.
+### Stage 1: Responsive Breakpoints
+- [x] **ResponsiveConfig**: Defined breakpoints for Mobile (<600), Tablet (<1024), and Desktop.
+- [ ] **Hamburger Menu**: Implement Drawer for mobile navigation.
+- [ ] **Adaptive Nav Bar**: Hide floating nav on mobile in favor of Drawer.
+
+### Stage 2: Adaptive Widgets
+- [x] **Responsive Grid**: Project grid adapts crossAxisCount (1, 2, or 4).
+- [ ] **Fluid Typography**: Adjust header sizes based on screen width.
+- [ ] **Resume Scaling**: Ensure PDF viewer scales and maintains usability on small screens.
+
+### Stage 3: Layout Verification
+- [ ] **Hardcoded Audit**: Replace fixed widths/heights with MediaQuery/Flexible.
+- [ ] **Viewport Testing**: Verify 375px, 768px, and 1440px widths.
+- [ ] **Edge Padding**: Fluid padding for various screen sizes.
+
+## Verification Plan
+...
+- Verify scroll sync accuracy.
+- Test hover states on project cards.
+- Ensure theme toggle doesn't break scroll listeners.

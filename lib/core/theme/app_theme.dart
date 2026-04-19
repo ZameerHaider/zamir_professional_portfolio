@@ -43,4 +43,23 @@ class AppTheme {
       useMaterial3: true,
     );
   }
+
+  static BoxDecoration glassDecoration(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return BoxDecoration(
+      color: isDark ? const Color(0x1AFFFFFF) : const Color(0x0D000000),
+      borderRadius: BorderRadius.circular(16),
+      border: Border.all(
+        color: isDark ? const Color(0x33FFFFFF) : const Color(0x1A000000),
+        width: 1.5,
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(isDark ? 0.3 : 0.05),
+          blurRadius: 20,
+          offset: const Offset(0, 10),
+        ),
+      ],
+    );
+  }
 }

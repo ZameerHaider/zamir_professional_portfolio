@@ -8,10 +8,8 @@ import 'features/portfolio/presentation/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(const ProviderScope(child: PortfolioApp()));
 }
@@ -24,7 +22,7 @@ class PortfolioApp extends ConsumerWidget {
     final themeMode = ref.watch(themeModeNotifierProvider);
 
     return MaterialApp(
-      title: 'Zamir Portfolio',
+      title: 'Zameer Portfolio',
       theme: AppTheme.cleanLightTheme,
       darkTheme: AppTheme.darkTechTheme,
       themeMode: themeMode,

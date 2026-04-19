@@ -19,7 +19,10 @@ class SummarySection extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            "Senior Flutter Developer with over 5 years of experience crafting high-quality cross-platform mobile applications. Proficient in Flutter and Dart, with a strong focus on responsive UI/UX design. Expertise in state management using Provider, GetX, and BLoC, along with a solid background integrating Firebase, RESTful, and GraphQL APIs. I specialize in building scalable enterprise architectures, leading teams, mentoring peers, and driving robust project success natively on iOS, Android, and Web.",
+            "Flutter developer with 5+ years of production experience — I don't just build apps, I ship them.\n\n"
+            "I have multiple live apps on the Apple App Store, including Ignite (an enterprise business platform). Apps used by real businesses and real users.\n\n"
+            "I specialize in crafting robust, scalable, and highly aesthetic cross-platform applications with native performance. My expertise spans the entire development lifecycle — from architectural design and backend integration (Firebase, AWS Amplify) to payment terminal implementations and store deployment.\n\n"
+            "Currently Senior Flutter Architect at Ignite, focusing on enterprise-scale solutions and innovative POS systems.",
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.6),
           ),
         ],
