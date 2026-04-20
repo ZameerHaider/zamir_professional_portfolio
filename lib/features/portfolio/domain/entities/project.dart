@@ -13,6 +13,7 @@ class Project with _$Project {
     required List<String> techStack,
     required List<String> impactMetrics,
     required String liveLink,
+    int? order,
   }) = _Project;
 
   factory Project.fromJson(Map<String, dynamic> json) => _$ProjectFromJson(json);

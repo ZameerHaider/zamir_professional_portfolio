@@ -18,6 +18,7 @@ _$ProjectImpl _$$ProjectImplFromJson(Map<String, dynamic> json) =>
           .map((e) => e as String)
           .toList(),
       liveLink: json['liveLink'] as String,
+      order: (json['order'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ProjectImplToJson(_$ProjectImpl instance) =>
@@ -29,4 +30,5 @@ Map<String, dynamic> _$$ProjectImplToJson(_$ProjectImpl instance) =>
       'techStack': instance.techStack,
       'impactMetrics': instance.impactMetrics,
       'liveLink': instance.liveLink,
+      'order': instance.order,
     };

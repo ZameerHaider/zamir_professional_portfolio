@@ -27,13 +27,35 @@ class DataService implements IPortfolioRepository {
 
   Future<void> seedFirestore() async {
     try {
+      // Clear existing projects
+      final projectsSnap = await FirebaseFirestore.instance.collection('projects').get();
+      for (var doc in projectsSnap.docs) {
+        await doc.reference.delete();
+      }
+
+      // Seed Projects
       final projects = await _jsonRepo.streamProjects().first;
       for (final project in projects) {
         final data = project.toJson();
         final Object? id = data.remove('id');
         await FirebaseFirestore.instance.collection('projects').doc(id.toString()).set(data);
       }
-      print('Seeding Complete!');
+
+      // Clear existing experience
+      final expSnap = await FirebaseFirestore.instance.collection('experience').get();
+      for (var doc in expSnap.docs) {
+        await doc.reference.delete();
+      }
+
+      // Seed Experience
+      final experience = await _jsonRepo.streamExperience().first;
+      for (final exp in experience) {
+        final data = exp.toJson();
+        final Object? id = data.remove('id');
+        await FirebaseFirestore.instance.collection('experience').doc(id.toString()).set(data);
+      }
+
+      print('Seeding Complete! Collections cleared and updated.');
     } catch (e) {
       print('Seeding Error: $e');
     }

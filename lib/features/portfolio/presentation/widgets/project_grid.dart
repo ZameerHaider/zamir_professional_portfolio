@@ -58,7 +58,7 @@ class _ProjectCardState extends State<ProjectCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -74,31 +74,27 @@ class _ProjectCardState extends State<ProjectCard> {
                 padding: const EdgeInsets.all(24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      widget.project.title, 
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold, 
-                        color: const Color(0xFF22D3EE)
-                      )
+                      widget.project.title,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
                     ),
                     const SizedBox(height: 8),
                     Text(widget.project.role, style: Theme.of(context).textTheme.titleSmall),
                     const SizedBox(height: 16),
-                    Expanded(
+                    Flexible(
                       child: Text(
                         widget.project.description,
                         maxLines: _isHovered ? 10 : 4,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: isDark ? Colors.white70 : Colors.black87
-                        ),
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: isDark ? Colors.white70 : Colors.black87),
                       ),
                     ),
                   ],
                 ),
               ),
-              
+
               // Tech Stack Overlay on Hover
               AnimatedPositioned(
                 duration: const Duration(milliseconds: 400),
@@ -112,27 +108,28 @@ class _ProjectCardState extends State<ProjectCard> {
                     gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
-                      colors: [
-                        const Color(0xFF22D3EE).withOpacity(0.9),
-                        const Color(0xFF22D3EE).withOpacity(0.0),
-                      ],
+                      colors: [Theme.of(context).primaryColor.withOpacity(0.9), Theme.of(context).primaryColor.withOpacity(0.0)],
                     ),
                   ),
                   child: Wrap(
                     spacing: 8,
                     runSpacing: 8,
-                    children: widget.project.techStack.map<Widget>((tech) => Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.white24,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white30),
-                      ),
-                      child: Text(
-                        tech.toString(), 
-                        style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)
-                      ),
-                    )).toList(),
+                    children: widget.project.techStack
+                        .map<Widget>(
+                          (tech) => Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.white24,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: Colors.white30),
+                            ),
+                            child: Text(
+                              tech.toString(),
+                              style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        )
+                        .toList(),
                   ),
                 ),
               ),
@@ -140,8 +137,6 @@ class _ProjectCardState extends State<ProjectCard> {
           ),
         ),
       ),
-    ).animate()
-     .fadeIn(delay: (100 * widget.index).ms, duration: 600.ms)
-     .slideY(begin: 0.2, end: 0, curve: Curves.easeOutQuad);
+    ).animate().fadeIn(delay: (100 * widget.index).ms, duration: 600.ms).slideY(begin: 0.2, end: 0, curve: Curves.easeOutQuad);
   }
 }

@@ -11,6 +11,7 @@ import 'package:zamir_professional_portfolio/features/portfolio/presentation/wid
 import 'package:zamir_professional_portfolio/features/portfolio/presentation/widgets/skills_section.dart';
 import 'package:zamir_professional_portfolio/features/portfolio/presentation/widgets/summary_section.dart';
 import 'package:zamir_professional_portfolio/features/resume/presentation/widgets/resume_viewer.dart';
+import 'package:zamir_professional_portfolio/features/portfolio/presentation/providers/portfolio_providers.dart';
 
 class PortfolioScaffold extends ConsumerStatefulWidget {
   const PortfolioScaffold({Key? key}) : super(key: key);
@@ -307,6 +308,11 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
                       const VerticalDivider(width: 1, indent: 8, endIndent: 8, color: Colors.white24),
                       const SizedBox(width: 24),
 
+                      IconButton(
+                        icon: const Icon(Icons.sync, size: 20),
+                        onPressed: () => ref.read(dataServiceProvider).seedFirestore(),
+                        tooltip: 'Sync Firestore (Dev Only)',
+                      ),
                       IconButton(icon: const FaIcon(FontAwesomeIcons.github, size: 20), onPressed: () => _launchUrl('https://github.com/zameerhaider'), tooltip: 'GitHub'),
                       IconButton(icon: const FaIcon(FontAwesomeIcons.linkedin, size: 20), onPressed: () => _launchUrl('https://linkedin.com/in/zameerhaider'), tooltip: 'LinkedIn'),
                       const SizedBox(width: 12),

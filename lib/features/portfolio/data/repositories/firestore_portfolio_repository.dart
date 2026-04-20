@@ -11,7 +11,7 @@ class FirestorePortfolioRepository implements IPortfolioRepository {
 
   @override
   Stream<List<Project>> streamProjects() {
-    return _firestore.collection('projects').snapshots().map((snapshot) {
+    return _firestore.collection('projects').orderBy('order').snapshots().map((snapshot) {
       return snapshot.docs.map((doc) {
         final data = doc.data();
         data['id'] = doc.id; // Map document ID

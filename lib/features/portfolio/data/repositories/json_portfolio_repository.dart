@@ -20,7 +20,9 @@ class JsonPortfolioRepository implements IPortfolioRepository {
   Stream<List<Project>> streamProjects() async* {
     final data = await _loadJson();
     final projectsList = data['projects'] as List<dynamic>? ?? [];
-    yield projectsList.map((e) => Project.fromJson(e as Map<String, dynamic>)).toList();
+    final projects = projectsList.map((e) => Project.fromJson(e as Map<String, dynamic>)).toList();
+    projects.sort((a, b) => (a.order ?? 0).compareTo(b.order ?? 0));
+    yield projects;
   }
 
   @override

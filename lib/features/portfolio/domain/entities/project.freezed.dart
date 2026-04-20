@@ -27,6 +27,7 @@ mixin _$Project {
   List<String> get techStack => throw _privateConstructorUsedError;
   List<String> get impactMetrics => throw _privateConstructorUsedError;
   String get liveLink => throw _privateConstructorUsedError;
+  int? get order => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +46,8 @@ abstract class $ProjectCopyWith<$Res> {
       String description,
       List<String> techStack,
       List<String> impactMetrics,
-      String liveLink});
+      String liveLink,
+      int? order});
 }
 
 /// @nodoc
@@ -68,6 +70,7 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
     Object? techStack = null,
     Object? impactMetrics = null,
     Object? liveLink = null,
+    Object? order = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -98,6 +101,10 @@ class _$ProjectCopyWithImpl<$Res, $Val extends Project>
           ? _value.liveLink
           : liveLink // ignore: cast_nullable_to_non_nullable
               as String,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -116,7 +123,8 @@ abstract class _$$ProjectImplCopyWith<$Res> implements $ProjectCopyWith<$Res> {
       String description,
       List<String> techStack,
       List<String> impactMetrics,
-      String liveLink});
+      String liveLink,
+      int? order});
 }
 
 /// @nodoc
@@ -137,6 +145,7 @@ class __$$ProjectImplCopyWithImpl<$Res>
     Object? techStack = null,
     Object? impactMetrics = null,
     Object? liveLink = null,
+    Object? order = freezed,
   }) {
     return _then(_$ProjectImpl(
       id: null == id
@@ -167,6 +176,10 @@ class __$$ProjectImplCopyWithImpl<$Res>
           ? _value.liveLink
           : liveLink // ignore: cast_nullable_to_non_nullable
               as String,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -181,7 +194,8 @@ class _$ProjectImpl implements _Project {
       required this.description,
       required final List<String> techStack,
       required final List<String> impactMetrics,
-      required this.liveLink})
+      required this.liveLink,
+      this.order})
       : _techStack = techStack,
         _impactMetrics = impactMetrics;
 
@@ -214,10 +228,12 @@ class _$ProjectImpl implements _Project {
 
   @override
   final String liveLink;
+  @override
+  final int? order;
 
   @override
   String toString() {
-    return 'Project(id: $id, title: $title, role: $role, description: $description, techStack: $techStack, impactMetrics: $impactMetrics, liveLink: $liveLink)';
+    return 'Project(id: $id, title: $title, role: $role, description: $description, techStack: $techStack, impactMetrics: $impactMetrics, liveLink: $liveLink, order: $order)';
   }
 
   @override
@@ -235,7 +251,8 @@ class _$ProjectImpl implements _Project {
             const DeepCollectionEquality()
                 .equals(other._impactMetrics, _impactMetrics) &&
             (identical(other.liveLink, liveLink) ||
-                other.liveLink == liveLink));
+                other.liveLink == liveLink) &&
+            (identical(other.order, order) || other.order == order));
   }
 
   @JsonKey(ignore: true)
@@ -248,7 +265,8 @@ class _$ProjectImpl implements _Project {
       description,
       const DeepCollectionEquality().hash(_techStack),
       const DeepCollectionEquality().hash(_impactMetrics),
-      liveLink);
+      liveLink,
+      order);
 
   @JsonKey(ignore: true)
   @override
@@ -272,7 +290,8 @@ abstract class _Project implements Project {
       required final String description,
       required final List<String> techStack,
       required final List<String> impactMetrics,
-      required final String liveLink}) = _$ProjectImpl;
+      required final String liveLink,
+      final int? order}) = _$ProjectImpl;
 
   factory _Project.fromJson(Map<String, dynamic> json) = _$ProjectImpl.fromJson;
 
@@ -290,6 +309,8 @@ abstract class _Project implements Project {
   List<String> get impactMetrics;
   @override
   String get liveLink;
+  @override
+  int? get order;
   @override
   @JsonKey(ignore: true)
   _$$ProjectImplCopyWith<_$ProjectImpl> get copyWith =>
