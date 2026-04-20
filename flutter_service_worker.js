@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/assets/specs/portfolio_config.json": "03ac7930adce938730823b0c6a1be67b",
+const RESOURCES = {"assets/assets/specs/portfolio_config.json": "9d61341bcf77ff93173751613109100a",
 "assets/assets/resume/zamir_haider_resume.pdf": "226c02c1ecccae62907b517f230f37ea",
 "assets/AssetManifest.json": "50672f3df5261e161da5e2f90d866da9",
 "assets/AssetManifest.bin.json": "c93399313fd5052705803a88d45ad6e5",
@@ -15,7 +15,7 @@ const RESOURCES = {"assets/assets/specs/portfolio_config.json": "03ac7930adce938
 "assets/packages/pdfrx/assets/pdfium.wasm": "e45b1bd7c49fb3c1b265367302856ed6",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "33b7d9392238c04c131b6ce224e13711",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
-"assets/fonts/MaterialIcons-Regular.otf": "eb41a63e3e551630f5744f9efcb2e904",
+"assets/fonts/MaterialIcons-Regular.otf": "884f54dd90c3441e2db754d59ece3df9",
 "assets/AssetManifest.bin": "3cace7a171540b1a2c597c8424bd30d8",
 "assets/NOTICES": "7cadbc9a143ba7f122eb9da28b754d7a",
 "assets/FontManifest.json": "c75f7af11fb9919e042ad2ee704db319",
@@ -37,8 +37,8 @@ const RESOURCES = {"assets/assets/specs/portfolio_config.json": "03ac7930adce938
 "canvaskit/skwasm_heavy.wasm": "8034ad26ba2485dab2fd49bdd786837b",
 "canvaskit/skwasm.js": "1ef3ea3a0fec4569e5d531da25f34095",
 "flutter.js": "888483df48293866f9f41d3d9274a779",
-"flutter_bootstrap.js": "8a65ecaefcce854b21e721b39ab820bb",
-"main.dart.js": "cbda77166f245049cf1aa32b39cc4ed5",
+"flutter_bootstrap.js": "4a61bccdffc4aa17e32c7bd57f0203a4",
+"main.dart.js": "60c11273e164ec0032b0877be114ee04",
 "version.json": "b84ef616898afa71d9f19082b58f967c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
