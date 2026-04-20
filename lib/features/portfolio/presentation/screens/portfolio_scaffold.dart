@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -117,12 +118,7 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
           ],
         ),
       ),
-    ).animate(target: isActive ? 1.0 : 0.0).scale(
-      begin: const Offset(1, 1),
-      end: const Offset(1.05, 1.05),
-      duration: 300.ms,
-      curve: Curves.easeOutBack
-    );
+    ).animate(target: isActive ? 1.0 : 0.0).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 300.ms, curve: Curves.easeOutBack);
   }
 
   @override
@@ -132,39 +128,39 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
     final isDesktop = ResponsiveConfig.isDesktop(context);
 
     return Scaffold(
-      drawer: isMobile ? Drawer(
-        backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-        child: Column(
-          children: [
-            DrawerHeader(
-              child: Center(
-                child: Text('ZAMEER', style: TextStyle(
-                  color: isDark ? const Color(0xFF22D3EE) : const Color(0xFF4F46E5),
-                  fontWeight: FontWeight.w900,
-                  fontSize: 24,
-                  letterSpacing: 4,
-                )),
-              ),
-            ),
-            _navButton('About', _heroKey, isDrawer: true),
-            _navButton('Skills', _skillsKey, isDrawer: true),
-            _navButton('Experience', _experienceKey, isDrawer: true),
-            _navButton('Projects', _projectsKey, isDrawer: true),
-            _navButton('Resume', _resumeKey, isDrawer: true),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+      drawer: isMobile
+          ? Drawer(
+              backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+              child: Column(
                 children: [
-                  IconButton(icon: const FaIcon(FontAwesomeIcons.github), onPressed: () => _launchUrl('https://github.com/zameerhaider')),
-                  IconButton(icon: const FaIcon(FontAwesomeIcons.linkedin), onPressed: () => _launchUrl('https://linkedin.com/in/zameerhaider')),
+                  DrawerHeader(
+                    child: Center(
+                      child: Text(
+                        'ZAMEER',
+                        style: TextStyle(color: isDark ? const Color(0xFF22D3EE) : const Color(0xFF4F46E5), fontWeight: FontWeight.w900, fontSize: 24, letterSpacing: 4),
+                      ),
+                    ),
+                  ),
+                  _navButton('About', _heroKey, isDrawer: true),
+                  _navButton('Skills', _skillsKey, isDrawer: true),
+                  _navButton('Experience', _experienceKey, isDrawer: true),
+                  _navButton('Projects', _projectsKey, isDrawer: true),
+                  _navButton('Resume', _resumeKey, isDrawer: true),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(icon: const FaIcon(FontAwesomeIcons.github), onPressed: () => _launchUrl('https://github.com/zameerhaider')),
+                        IconButton(icon: const FaIcon(FontAwesomeIcons.linkedin), onPressed: () => _launchUrl('https://linkedin.com/in/zameerhaider')),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ],
-        ),
-      ) : null,
+            )
+          : null,
       body: Stack(
         children: [
           CustomScrollView(
@@ -176,12 +172,11 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
                 pinned: true,
                 elevation: 0,
                 backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-                leading: isMobile ? Builder(
-                  builder: (context) => IconButton(
-                    icon: const Icon(Icons.menu),
-                    onPressed: () => Scaffold.of(context).openDrawer(),
-                  ),
-                ) : null,
+                leading: isMobile
+                    ? Builder(
+                        builder: (context) => IconButton(icon: const Icon(Icons.menu), onPressed: () => Scaffold.of(context).openDrawer()),
+                      )
+                    : null,
                 flexibleSpace: FlexibleSpaceBar(
                   centerTitle: true,
                   background: Container(
@@ -201,17 +196,14 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
                             const SizedBox(height: 40),
                             Text(
                               'Zameer | Senior Flutter Architect',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w900, 
-                                fontSize: isMobile ? 28 : 42,
-                              ),
+                              style: TextStyle(fontWeight: FontWeight.w900, fontSize: isMobile ? 28 : 42),
                               textAlign: TextAlign.center,
                             ).animate().fade(duration: 800.ms).slideY(begin: 0.2, end: 0),
                             const SizedBox(height: 16),
                             Text(
                               "Crafting robust, scalable, and highly aesthetic cross-platform applications.",
                               style: (isMobile ? Theme.of(context).textTheme.titleMedium : Theme.of(context).textTheme.titleLarge)?.copyWith(
-                                color: isDark ? Colors.white70 : Colors.black54
+                                color: isDark ? Colors.white70 : Colors.black54,
                               ),
                               textAlign: TextAlign.center,
                             ).animate(delay: 200.ms).fade(duration: 800.ms).slideY(begin: 0.2, end: 0),
@@ -234,12 +226,9 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
                   const SizedBox(width: 16),
                 ],
               ),
-              
+
               SliverPadding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: isMobile ? 16 : (isDesktop ? 64 : 32), 
-                  vertical: 64
-                ),
+                padding: EdgeInsets.symmetric(horizontal: isMobile ? 16 : (isDesktop ? 64 : 32), vertical: 64),
                 sliver: SliverList(
                   delegate: SliverChildListDelegate([
                     SummarySection(key: _heroKey),
@@ -254,10 +243,7 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
                     Text(
                       "Selected Projects",
                       key: _projectsKey,
-                      style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        fontSize: isMobile ? 24 : 32,
-                      ),
+                      style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: isMobile ? 24 : 32),
                     ).animate().fade().slideX(begin: -0.1, end: 0),
                     const SizedBox(height: 32),
                     const ProjectGrid(),
@@ -270,7 +256,7 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
               ),
             ],
           ),
-          
+
           if (!isMobile)
             Positioned(
               top: 24,
@@ -285,12 +271,7 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
                     children: [
                       Text(
                         'ZAMIR',
-                        style: TextStyle(
-                          color: isDark ? const Color(0xFF22D3EE) : const Color(0xFF4F46E5), 
-                          fontWeight: FontWeight.w900, 
-                          letterSpacing: 2, 
-                          fontSize: 16
-                        ),
+                        style: TextStyle(color: isDark ? const Color(0xFF22D3EE) : const Color(0xFF4F46E5), fontWeight: FontWeight.w900, letterSpacing: 2, fontSize: 16),
                       ),
                       const SizedBox(width: 24),
                       const VerticalDivider(width: 1, indent: 8, endIndent: 8, color: Colors.white24),
@@ -308,11 +289,9 @@ class _PortfolioScaffoldState extends ConsumerState<PortfolioScaffold> {
                       const VerticalDivider(width: 1, indent: 8, endIndent: 8, color: Colors.white24),
                       const SizedBox(width: 24),
 
-                      IconButton(
-                        icon: const Icon(Icons.sync, size: 20),
-                        onPressed: () => ref.read(dataServiceProvider).seedFirestore(),
-                        tooltip: 'Sync Firestore (Dev Only)',
-                      ),
+                      kDebugMode
+                          ? IconButton(icon: const Icon(Icons.sync, size: 20), onPressed: () => ref.read(dataServiceProvider).seedFirestore(), tooltip: 'Sync Firestore (Dev Only)')
+                          : const SizedBox.shrink(),
                       IconButton(icon: const FaIcon(FontAwesomeIcons.github, size: 20), onPressed: () => _launchUrl('https://github.com/zameerhaider'), tooltip: 'GitHub'),
                       IconButton(icon: const FaIcon(FontAwesomeIcons.linkedin, size: 20), onPressed: () => _launchUrl('https://linkedin.com/in/zameerhaider'), tooltip: 'LinkedIn'),
                       const SizedBox(width: 12),
